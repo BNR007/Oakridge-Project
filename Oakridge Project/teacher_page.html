@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeachHub - Explore, Reflect, Connect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+            overflow: hidden;
+            background: linear-gradient(45deg, #8e44ad, #3498db, #1abc9c, #8e44ad);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            overflow:auto;
+            height: 1500px;
+        }
+
+        @keyframes gradientAnimation {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #66a5ad;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #66a5ad;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            font-size: 26px;
+            width: 60%;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+
+        }
+
+        h3 {
+            text-align: center;
+            color: #fff;
+            margin: 20px 10%;
+            line-height: 1.6;
+        }
+
+        .tabs {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .tab-button {
+            background-color: #66a5ad;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+
+        .tab-button:hover {
+            background-color: #4d8288;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 2px solid #66a5ad;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #4d8288;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        .tab-content #notes-text {
+            color: #000;
+            background-color: #8e44ad; 
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #000; 
+        }
+        ul {
+            border-color: rgb(45, 44, 44);
+        }
+        .buton:hover {
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 >TeachHub - Explore, Reflect, Connect</h1>
+
+    <div class="tabs">
+        <button class="tab-button" onclick="openTab('stress')">Relieving Stress</button>
+        <button class="tab-button" onclick="openTab('notes')">Daily Self Notes</button>
+        <button class="tab-button" onclick="openTab('chat')">Connect</button>
+        <button class="tab-button" onclick="redirect2()">Main Page</button>
+    </div>
+
+    <h3>Welcome Teachers! This space is created exclusively for educators seeking relaxation, reflection, and connections. Use the tabs above to explore different aspects of this website.</h3>
+
+    <div id="stress" class="tab-content">
+        <h2>Relieving Stress</h2>
+        <p>Teaching can be stressful, and it's crucial to find effective ways to relax. Here are some stress-relief tips:</p>
+        <ul>
+            <li>Practice deep breathing exercises.</li>
+            <li>Take short breaks during the day to stretch and move.</li>
+            <li>Explore mindfulness and meditation techniques.</li>
+            <br>
+            <video width="420px" height="315px" src="https://www.youtube.com/watch?v=hFcQpNr_KA4" controls>
+            </video>
+            
+        </ul>
+    </div>
+
+    <div id="notes" class="tab-content">
+        <h2> Daily Self Notes</h2>
+        <div id="stress">
+            <p>Reflecting on your teaching experiences can enhance your professional growth. Consider the following for your daily self-notes:</p>
+            <ul>
+                <li>Record positive interactions with students.</li>
+                <li>Identify challenges and brainstorm solutions.</li>
+                <li>Set achievable goals for the next day or week.</li>
+                <textarea rows="10" placeholder="Take notes here to organize your thoughts and ideas." style="height: fit-content;width: 300px;"></textarea>
+            </ul>
+        </div>
+    </div>
+
+    <div id="chat" class="tab-content">
+        <h2>Connect</h2>
+        <p>Building connections with fellow educators can provide support and valuable insights. Join the conversation in our chat community:</p>
+        <ul>
+            <li>Share your teaching experiences and learn from others.</li>
+            <li>Ask questions and seek advice on various teaching topics.</li>
+            <li>Collaborate on projects and initiatives to enhance education.</li>
+        </ul>
+        <center>
+        <div id="chat-container">
+            <h3 style="color: black;">Chat</h3>
+            <div id="chat-messages"></div>
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</ button>
+        </div>
+    </div>
+</center>
+    <footer>
+        &copy; 2024 TeachHub - Explore, Reflect, Connect
+    </footer>
+
+    <script>
+         function sendMessage() {
+        var userInput = document.getElementById('user-input').value;
+        var chatMessages = document.getElementById('chat-messages');
+        var newMessage = document.createElement('p');
+        newMessage.textContent = 'You: ' + userInput;
+        chatMessages.appendChild(newMessage);
+        document.getElementById('user-input').value = ''; 
+    }
+        function redirect() {
+            var videoUrl = 'https://www.youtube.com/watch?v=hFcQpNr_KA4';          
+            window.location.href = videoUrl;
+        }
+        function redirect2(){
+            window.location.href = 'main.html';
+        }
+        function openTab(tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.querySelector(".tab-button[data-tab='" + tabName + "']").classList.add("active");
+        }
+       
+    </script>
+
+</body>
+
+</html>

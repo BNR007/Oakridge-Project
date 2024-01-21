@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: backgroundAnimation 5s infinite linear;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(45deg, #ff6eff, #8f94fb, #ff6eff);
+            }
+
+            25% {
+                background: linear-gradient(45deg, #8f94fb, #ff6eff, #8f94fb);
+            }
+
+            50% {
+                background: linear-gradient(45deg, #ff6eff, #8f94fb, #ff6eff);
+            }
+
+            75% {
+                background: linear-gradient(45deg, #8f94fb, #ff6eff, #8f94fb);
+            }
+
+            100% {
+                background: linear-gradient(45deg, #ff6eff, #8f94fb, #ff6eff);
+            }
+        }
+
+        #login-form {
+            position: relative;
+            z-index: 1;
+            max-width: 300px;
+            margin: 10% auto;
+            background: linear-gradient(45deg, #ff6eff, #8f94fb, #ff6eff);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            animation: loginAnimation 0.3s ease-in-out;
+        }
+
+        @keyframes loginAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        button {
+            background-color: #fff;
+            color: #ff6eff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+    </style>`
+<body>
+
+    <div id="background"></div>
+
+    <div id="login-form">
+        <h2>Sign up</h2>
+        <form onsubmit="login(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+            <br>
+        </form><center>
+        <button class="button1" onclick="sign()" style="width: 200px;">Click here to sign up</button>
+        </center>
+    </div>
+
+    <script>
+        function sign(){
+                      
+            window.location.href = 'sign.html';
+        }
+        function login(event) {
+            event.preventDefault();
+
+            
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+        
+            if (username === "admin" && password === "admin") {
+                alert("Login successful! Redirecting to welcome page.");
+                //this is thr redrct
+                window.location.href = "main.html"; 
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+

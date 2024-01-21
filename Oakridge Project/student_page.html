@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html {
+            margin: auto;
+            height: 100%;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(45deg, #4CAF50, #388E3C);
+            animation: changeColor 3s infinite alternate;
+            overflow: auto; 
+            height: 1500px;
+        }
+
+        @keyframes changeColor {
+            0% {
+                background: linear-gradient(45deg, #4CAF50, #388E3C);
+            }
+          
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .tabs {
+            background-color: transparent;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tab {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        .tab:hover {
+            background-color: #45a049;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .active {
+            background-color: #45a049;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Welcome to the Student Hub!</h1>
+        <p>Empowering students for success and well-being.</p>
+    </div>
+
+    <div class="tabs">
+        <a href="javascript:void(0);" class="tab" onclick="openTab(event, 'stress')">
+            <i class="icon fas fa-exclamation-circle"></i> Stress Revealing
+        </a>
+        <a href="javascript:void(0);" class="tab" onclick="openTab(event, 'qualities')">
+            <i class="icon fas fa-award"></i> Qualities of a Good Student
+        </a>
+        <a href="javascript:void(0);" class="tab" onclick="openTab(event, 'mentalHealth')">
+            <i class="icon fas fa-brain"></i> Mental Health
+        </a>
+        <a href="javascript:void(0);" class="tab" onclick="openTab(event, 'studies')">
+            <i class="icon fas fa-brain"></i> Study Tips
+        </a>
+        <a href="javascript:void(0);" class="tab" onclick="openTab(event, 'notes')">
+            <i class="icon fas fa-sticky-note"></i> Self Notes
+        </a>
+        <a href="javascript:void(0);" class="tab" onclick="but()">
+            <i class="icon fa fa-home"></i> Main Page
+        </a>
+    </div>
+
+    <div id="stress" class="tabcontent">
+        <h2><i class="icon fas fa-exclamation-circle"></i> Stress Revealing</h2>
+        <p>Feeling overwhelmed? Learn about recognizing stress triggers and effective techniques to manage stress. Develop a healthy approach to handle academic pressures.</p>
+        <p>Common stress management techniques include:</p>
+        <ul>
+            <li>Deep breathing exercises</li>
+            <li>Time management strategies</li>
+            <li>Physical activity and exercise</li>
+            <li>Positive self-talk</li>
+            <li>Seeking support from friends or professionals</li>
+        </ul>
+    </div>
+
+    <div id="qualities" class="tabcontent">
+        <h2><i class="icon fas fa-award"></i> Qualities of a Good Student</h2>
+        <p>Successful students often possess certain qualities that contribute to their academic achievements. Cultivate these qualities to excel in your studies:</p>
+        <ul>
+            <li>Self-discipline</li>
+            <li>Time management skills</li>
+            <li>Effective communication</li>
+            <li>Curiosity and eagerness to learn</li>
+            <li>Adaptability and resilience</li>
+            <li>Critical thinking and problem-solving</li>
+        </ul>
+    </div>
+
+    <div id="mentalHealth" class="tabcontent">
+        <h2><i class="icon fas fa-brain"></i> How to Keep Good Mental Health</h2>
+        <p>Maintaining good mental health is crucial for academic success and overall well-being. Consider the following tips:</p>
+        <ul>
+            <li>Practice self-care regularly</li>
+            <li>Establish a healthy work-life balance</li>
+            <li>Connect with friends and support networks</li>
+            <li>Seek professional help if needed</li>
+            <li>Set realistic goals and expectations</li>
+            <li>Engage in activities you enjoy</li>
+        </ul>
+    </div>
+    <div id="studies" class="tabcontent">
+        <h2><i class="icon fas fa-brain"></i> Study Tips</h2>
+        <p>Enhance your study habits with these effective techniques to maximize your learning:
+            
+        </p>
+        
+        <ul> 
+            <h2>Feynman's Technique: Step 1</h2>
+            <li> Select a concept to learn.
+                Teach it to a child.
+                Review and refine your understanding.
+                Organize your notes and revisit them regularly.
+                Let’s delve deeper into these steps.
+                </li>
+            <li>Teach it to a child.</li>
+            <li>Use active learning techniques, such as summarizing information in your own words.</li>
+            <li>Organize your notes and revisit them regularly</li>
+            <li>Let’s delve deeper into these steps.-</li>
+        </ul>
+    
+        <h3>Step 2: Teach it to a child.</h3>
+        <p>Improve your note-taking skills for better retention and understanding:</p>
+        <ul>
+            <li>Can you explain your chosen concept to a 12-year-old? Test your understanding by simplifying your notes. Banish jargon and complexity, using only words a child would comprehend. Simplicity reveals a depth of understanding, while jargon often conceals ignorance.</li>
+            
+        </ul>
+    
+        <h3>Step 3:Review and Refine</h3>
+       
+        <ul>
+            <li>Write down your simplified explanation. The act of writing aids reflection and learning. In fact, reflection is the most important part of the learning process. Reflection is how we learn what we know and what we need to learn.
+
+      
+                
+                Clear writing gives poor thinking nowhere to hide.
+                
+                Ensure your notes are free of any jargon or something that sounds confusing. Ensure your notes are free from jargon or any glossed-over complexities. If something sounds confusing, it needs more refinement.
+                
+                Read it out loud as if to a child. If the explanation isn’t simple enough or sounds confusing, that’s a good indication that you need to reflect and refine.
+                
+                Go back to the source material, reviewing the parts you don’t quite understand yet.
+                
+                Repeat until you have a simple explanation.</li>
+                <h3>Step 4:Organize and Review.</h3>
+            <li>To test your understanding in the real world, present your explanation to someone else. How effective was your explanation? What questions did they ask? What parts did they get confused about?
+
+                When you’re happy with your understanding, take the page you created with a simple explanation and put it into a binder. Following this technique for everything you learn gives you a binder full of learning that you can review a couple of times a year.</li>
+           
+        </ul>
+    
+        
+    </div>
+    <div id="notes" class="tabcontent">
+        <h2><i class="icon fas fa-sticky-note"></i> Self Notes</h2>
+        <textarea rows="10" placeholder="Take notes here to organize your thoughts and ideas."></textarea>
+    </div>
+    <center>
+
+    <script>
+        function but(){
+            window.location.href= 'main.html';
+        }
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduHub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            overflow: hidden;
+            animation: chromaAnimation 10s ease infinite;
+        }
+
+        @keyframes chromaAnimation {
+            0%, 100% {
+                background: linear-gradient(45deg, #00FF00, #FF00FF, #00FFFF, #FF0000);
+                background-size: 400% 400%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: transparent;
+            color: white; 
+            padding: 20px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            border: 2px solid #FFFFFF; 
+            margin: 10px 0;
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            width: 50%;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+        }
+
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: transparent;
+  size: 5%;
+}
+
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+    <center>
+    <ul style="text-align: center;">
+        <li><a href="#home" onclick="redirect()">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="ok"><a href="#about">About</a></li>
+      </ul>
+      </center>
+    </div>
+    <header>
+        <h1>Welcome to Eduhub</h1>
+        <h2>Please select:</h2>
+    </header>
+   
+
+        
+    <div style="text-align: center;">
+        <button onclick="redirectToPage('teacher')">Teacher</button>
+        <button onclick="redirectToPage('student')">Student</button>
+    </div>
+       <audio autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+<h2 style="text-align: center;">Desciption:</h2>
+<p style="color: white;font-size: 20px;text-align: center;">EduHub is a free website for teachers and stude
+    nts to help organize their work and destress. Especially during higher grades, due to lots of homework, studies and pressure from parents people mental stress skyrockets.
+Due to this people perform even worse in upcoming examinations increasing their stress. In such stressful scenarios people resort to vices such as underage smoking and drinking.
+There is a similar effect for teachers, after an exhausting day of teaching and maintaining classroom decorum, and since it is easier for them to access such goods which affects health.
+The purpose of this website is too not only improve mental health but organize both students and teachers work to reduce stress and frustration.</p>
+    <script>
+        function redirectToPage(role) {
+            if (role === 'teacher') {
+                window.location.href = 'teacher_page.html';
+            } else if (role === 'student') {
+                window.location.href = 'student_page.html';
+            }
+        }
+        function redirect(role){
+            [i].style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
